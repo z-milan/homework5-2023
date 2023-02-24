@@ -1,0 +1,138 @@
+@keyframes logo_anim {
+    0%   {top: 0px; width: 25px;}
+    100% {top: 0px; width: 475px;}
+}
+
+#logo {
+	animation: logo_anim 5s; 
+}
+
+body {
+	font-family: "Poppins", serif;
+	background-image: url('../images/concrete_seamless.png');
+	background-color: #f1f1f1;
+}
+
+header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.nav_links {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.nav_links a {
+	color: blue;
+}
+
+.card > header {
+	background: #288088;
+	border: solid 2px #45ADAD;
+	padding: 20px 0px 20px 0px;
+	border-radius: 50px 50px 0px 0px;
+}
+
+
+.card {
+	flex-basis: 450px;
+	flex-direction: row;
+	border-radius: 50px 50px 0px 0px;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+.pricing {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+}
+
+.gallery img {
+	border: solid 10px #50C7C7;
+	margin: 10px;
+	width: 300px;
+}
+
+.gallery {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+
+@media screen and (min-width: 900px) {
+	header {
+	flex-direction: row;
+	justify-content: space-between;
+	}
+
+	.nav_links {
+	flex-direction: row;
+	}
+
+
+	.pricing {
+	flex-wrap: nowrap;
+	}
+
+	.card {
+	flex-basis: 275px;
+	}
+
+	body > header {
+	position: sticky;
+	top: 0px;
+	}
+}
+
+@media (prefers-reduced-motion) {
+	#logo {
+		animation: logo_anim 0s;
+	}
+}
+
+@media print {
+	body {
+		font-family: Arial, Helvetica;
+		background-image: none;
+	}
+
+	li + li {
+		margin-left: 170px;
+	}
+
+	.nav_links {
+		flex-direction: row;
+		width: 100%;
+	}
+
+	.pricing {
+		flex-direction: row;
+		flex-wrap: nowrap;
+		align-items: flex-end;
+	}
+
+	.gallery, #gallery {
+		visibility: collapse;
+	}
+
+	.card {
+		border: solid 2px #45ADDD;
+		flex-basis: 325px;
+	}
+
+	main ul li:nth-child(even)::after {
+		content: "\01F44D";
+	}
+}
+
+
